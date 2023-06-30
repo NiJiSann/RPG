@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 5621372e71b04014ea4366cdb02554f7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - EdPS Gothic
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7044dc1f10911ae43ac8c4f2a6be883d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
