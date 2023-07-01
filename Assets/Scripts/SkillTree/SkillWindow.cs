@@ -28,11 +28,14 @@ public class SkillWindow : MonoBehaviour
 
     public void SetCurrSkill(SkillTreeItem skill) 
     {
+        _forgetSkill.onClick.RemoveAllListeners();
+        _learnSkill.onClick.RemoveAllListeners();
+
         _info.text = skill.Description;
         _currSkill = skill; 
         UpdateInfo();
-        _forgetSkill.onClick.AddListener(_currSkill.Forget);
-        _learnSkill.onClick.AddListener(_currSkill.Learn);
+        _forgetSkill.onClick.AddListener(ForgetCurrSkill);
+        _learnSkill.onClick.AddListener(LearnCurrSkill);
 
     }
 
@@ -46,9 +49,21 @@ public class SkillWindow : MonoBehaviour
 
     }
 
+    private void ForgetCurrSkill()
+    {
+        _currSkill.Forget();
+        UpdateInfo();
+    }
+
+    private void LearnCurrSkill()
+    {
+        _currSkill.Learn();
+        UpdateInfo();
+    }
+
     private void CanForgetSkill() 
     {
-        if (_currSkill.State  != SkillState.obtained)
+        if (_currSkill.State != SkillState.obtained)
         {
             _forgetSkill.interactable = false;
             return;
@@ -62,18 +77,30 @@ public class SkillWindow : MonoBehaviour
                 return;
             }
         }
+
+        _forgetSkill.interactable = true;
+
     }
 
     private void CanLearnSkill()
     {
-        if ( _currSkill.Price <= _skillPointManager.GetPonts()) 
-        {
-            _learnSkill.interactable = true;
-        }
-        else
-        {
-            _learnSkill.interactable= false;
-        }
-    }
+        _learnSkill.interactable = false;
 
+        bool canLearn = false;
+
+        foreach (var skill in _currSkill.LeadingSkills)
+        {
+            if (skill.State == SkillState.obtained)
+            {
+                canLearn = true;
+            }
+        }
+
+        if (!canLearn) { return; }
+
+        if ( _currSkill.Price <= _skillPointManager.GetPonts() && _currSkill.State == SkillState.opened) 
+            _learnSkill.interactable = true;
+
+     
+    }
 }

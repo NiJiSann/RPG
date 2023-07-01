@@ -2119,7 +2119,7 @@ MonoBehaviour:
   _isBase: 0
   _price: 1
   _leadingSkills:
-  - {fileID: 578470338}
+  - {fileID: 483441113}
   _followingSkills: []
   _state: 1
   _description: 'Aura lvl 3
@@ -4249,7 +4249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 174.04492, y: -41.724976}
+  m_AnchoredPosition: {x: 174.04492, y: -41.724854}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &932243389
@@ -4529,7 +4529,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 101.2662}
+  m_AnchoredPosition: {x: 0, y: 101.26611}
   m_SizeDelta: {x: 173.1776, y: 202.5324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &964109599
@@ -4786,7 +4786,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -262, y: 109.34}
+  m_AnchoredPosition: {x: -262, y: 109.34009}
   m_SizeDelta: {x: 277.0343, y: 218.6879}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1022133183
@@ -6117,7 +6117,7 @@ MonoBehaviour:
   _isBase: 0
   _price: 1
   _leadingSkills:
-  - {fileID: 578470338}
+  - {fileID: 483441113}
   _followingSkills: []
   _state: 1
   _description: 'Spell lvl 3
@@ -6373,7 +6373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d2d87c75d7f50d4189417fff92001c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseSkill: {fileID: 0}
+  _baseSkill: {fileID: 578470338}
+  _forgetAll: {fileID: 1022133183}
 --- !u!1 &1299541255
 GameObject:
   m_ObjectHideFlags: 0

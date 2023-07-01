@@ -23,27 +23,45 @@ public class SkillTreeItem : MonoBehaviour
     public string Description { get { return _description; }  }
     public int Price { get { return _price; } }
     public SkillTreeItem[] FollowingSkills { get { return _followingSkills; }  }
-    public SkillState State { get { return _state; } }
+    public SkillTreeItem[] LeadingSkills { get { return _leadingSkills; } }
+    public SkillState State { 
+        get
+        {
+            return _state; 
+        }
+        set 
+        {
+            _state = value;
+            OnStateChange?.Invoke(value);
+
+            if (value != SkillState.locked)
+                _skillBtn.interactable = true;
+
+        }
+    }
 
     public Action<SkillState> OnStateChange;
 
     private void Start()
     {
-        OnStateChange?.Invoke(_state);
         _skillBtn = GetComponent<Button>();
-        _skillBtn.onClick.AddListener( ()=> _window.SetCurrSkill(this)); 
+        _skillBtn.interactable = false;
+        _skillBtn.onClick.AddListener( ()=> _window.SetCurrSkill(this));
+        State = _state;
     }
 
     public void Forget() 
     {
-        _state = SkillState.opened;
-        OnStateChange?.Invoke(_state);
+        State = SkillState.opened;
     }
 
     public void Learn()
     {
-        _state = SkillState.obtained;
-        OnStateChange?.Invoke(_state);
+        State = SkillState.obtained;
+
+        foreach (SkillTreeItem skill in _followingSkills) 
+            skill.State = SkillState.opened;
+
     }
 
 }
