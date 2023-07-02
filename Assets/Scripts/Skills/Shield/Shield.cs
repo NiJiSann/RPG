@@ -23,7 +23,7 @@ public class Shield : Skill
 
         _shield.transform.localScale = _initSize;
 
-        var currLvl =  _upgrades[SkilData.GetSkillLvl(SkillType.Shield)];
+        var currLvl =  _upgrades[SkillData.GetSkillLvl(SkillType.Shield)];
         _shield.transform.localScale *= currLvl.size;
         _animator.SetTrigger("Shield");
         yield return new WaitForSeconds(1.5f);

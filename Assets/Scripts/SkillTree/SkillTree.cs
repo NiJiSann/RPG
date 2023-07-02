@@ -19,8 +19,9 @@ public class SkillTree : MonoBehaviour
 
     private void OpenStartUpSkills() 
     {
-        foreach (var skill in _baseSkill.FollowingSkills)
-            skill.State = SkillState.opened;
+        foreach (var skill in _baseSkill.FollowingSkills) 
+            if (skill.State == SkillState.locked)
+                skill.State = SkillState.opened;    
     }
 
     private void SetSkillWindow(SkillTreeItem skill)

@@ -51,6 +51,8 @@ public class SkillWindow : MonoBehaviour
 
     private void UpdateInfo() 
     {
+        if (_currSkill == null) return;
+
         CanForgetSkill();
         CanLearnSkill();
 
@@ -60,6 +62,7 @@ public class SkillWindow : MonoBehaviour
 
     private void ForgetCurrSkill()
     {
+        SkillData.SetSkillLvl(_currSkill.SkillType, _currSkill.SkillLvl-1);
         _currSkill.Forget();
         _skillPointManager.AddPoints(_currSkill.Price);
         UpdateInfo();
@@ -67,6 +70,7 @@ public class SkillWindow : MonoBehaviour
 
     private void LearnCurrSkill()
     {
+        SkillData.SetSkillLvl(_currSkill.SkillType, _currSkill.SkillLvl);
         _currSkill.Learn();
         _skillPointManager.AddPoints(-_currSkill.Price);
         UpdateInfo();
@@ -74,6 +78,7 @@ public class SkillWindow : MonoBehaviour
 
     private void CanForgetSkill() 
     {
+
         if (_currSkill.State != SkillState.obtained)
         {
             _forgetSkill.interactable = false;

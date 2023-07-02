@@ -25,7 +25,7 @@ public class Spell : Skill
         _spell.transform.localScale = _initSize;
 
         var instance = Instantiate(_spell, _parent);
-        var currLvl = _upgrades[SkilData.GetSkillLvl(SkillType.Spell)];
+        var currLvl = _upgrades[SkillData.GetSkillLvl(SkillType.Spell)];
         var animDuration = .9f; 
         instance.transform.localScale *= currLvl.size;
 

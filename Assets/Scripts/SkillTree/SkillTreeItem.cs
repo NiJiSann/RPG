@@ -48,13 +48,29 @@ public class SkillTreeItem : MonoBehaviour
         }
     }
 
-    public void Forget() => State = SkillState.opened;
+    private void Start()
+    {
+        RestoreSkillProgress();
+    }
+
+    public void Forget() 
+    {
+        State = SkillState.opened; 
+    }
 
     public void Learn()
     {
         State = SkillState.obtained;
 
         foreach (SkillTreeItem skill in _followingSkills) 
-            skill.State = SkillState.opened;
+            if (skill.State == SkillState.locked)
+               skill.State = SkillState.opened;
     }
+
+    private void RestoreSkillProgress()
+    {
+        if (SkillData.GetSkillLvl(SkillType) >= SkillLvl)
+            Learn();
+    }
+
 } 

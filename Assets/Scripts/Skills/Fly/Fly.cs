@@ -17,7 +17,7 @@ public class Fly : Skill
 
     private IEnumerator FlyCo() 
     {
-        var currLvl = _upgrades[SkilData.GetSkillLvl(SkillType.Fly)];
+        var currLvl = _upgrades[SkillData.GetSkillLvl(SkillType.Fly)];
 
         _animator.SetBool("isFlying", true);
         var initDrag = _rigidbody.drag;
