@@ -16,7 +16,4 @@ MonoBehaviour:
 
     size = 1
 
-    damage = 1
-
-
-    Price = 1'
+    damage = 1'

@@ -16,7 +16,4 @@ MonoBehaviour:
 
     size = 2
 
-    duration = 2
-
-
-    Price = 1'
+    duration = 2'

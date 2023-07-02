@@ -11,6 +11,7 @@ public class SkillWindow : MonoBehaviour
     [SerializeField] private SkillPointManager _skillPointManager;
 
     private SkillTreeItem _currSkill;
+    private CanvasGroup _windowCG;
 
     public Action<SkillTreeItem> OnCurrSkillChange;
 
@@ -28,15 +29,24 @@ public class SkillWindow : MonoBehaviour
 
     private void SetCurrSkill(SkillTreeItem skill) 
     {
-        gameObject.SetActive(true);
+        _currSkill = skill; 
+        ShowWindow();
         _forgetSkill.onClick.RemoveAllListeners();
         _learnSkill.onClick.RemoveAllListeners();
 
         _info.text = Resources.Load<SkillDescription>($"Descriptions/{skill.SkillType}_{skill.SkillLvl}").description;
-        _currSkill = skill; 
+        _info.text += $"\n Price = {skill.Price} point";
         UpdateInfo();
         _forgetSkill.onClick.AddListener(ForgetCurrSkill);
         _learnSkill.onClick.AddListener(LearnCurrSkill);
+    }
+
+    private void Start() => _windowCG = GetComponent<CanvasGroup>();
+
+    private void ShowWindow()
+    {
+        _windowCG.alpha = 1;
+        _windowCG.interactable = true;
     }
 
     private void UpdateInfo() 

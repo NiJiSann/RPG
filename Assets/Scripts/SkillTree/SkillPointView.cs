@@ -8,5 +8,6 @@ public class SkillPointView : MonoBehaviour
 
     private void OnEnable() => _skillPointManager.OnValueChange += UpdateView;
     private void OnDisable() => _skillPointManager.OnValueChange -= UpdateView;
+    private void Start() => UpdateView();
     private void UpdateView() => _amount.text = _skillPointManager.GetPonts().ToString();
 }

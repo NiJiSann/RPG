@@ -16,7 +16,4 @@ MonoBehaviour:
 
     speed = 3
 
-    duration = 3
-
-
-    Price = 1'
+    duration = 3'

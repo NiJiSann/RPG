@@ -16,7 +16,4 @@ MonoBehaviour:
 
     HP = +20%
 
-    MP = +20%
-
-
-    Price = 1'
+    MP = +20%'

@@ -108,6 +108,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2024293447778859933, guid: 3dcd5772d28aa7946878e4adaf9a6439, type: 3}
+      propertyPath: _followingSkills.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024293447778859933, guid: 3dcd5772d28aa7946878e4adaf9a6439, type: 3}
       propertyPath: _leadingSkills.Array.data[0]
       value: 
       objectReference: {fileID: 0}
