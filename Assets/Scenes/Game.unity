@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 230881770}
   - component: {fileID: 230881772}
   - component: {fileID: 230881771}
+  - component: {fileID: 230881773}
   m_Layer: 0
   m_Name: Fly
   m_TagString: Untagged
@@ -280,6 +281,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &230881773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230881769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fab66b00782b584989bcafc383cc006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skillType: 2
+  _icon: {fileID: 2038241452}
 --- !u!1 &264578104
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +345,7 @@ GameObject:
   - component: {fileID: 314647540}
   - component: {fileID: 314647542}
   - component: {fileID: 314647541}
+  - component: {fileID: 314647543}
   m_Layer: 0
   m_Name: Spell
   m_TagString: Untagged
@@ -424,6 +440,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &314647543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314647539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fab66b00782b584989bcafc383cc006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skillType: 1
+  _icon: {fileID: 1390455310}
 --- !u!1 &360392544
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +541,7 @@ GameObject:
   - component: {fileID: 374437684}
   - component: {fileID: 374437686}
   - component: {fileID: 374437685}
+  - component: {fileID: 374437687}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -605,6 +636,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &374437687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374437683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fab66b00782b584989bcafc383cc006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skillType: 3
+  _icon: {fileID: 1914943861}
 --- !u!1 &510445335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,6 +1385,7 @@ GameObject:
   - component: {fileID: 1225885155}
   - component: {fileID: 1225885157}
   - component: {fileID: 1225885156}
+  - component: {fileID: 1225885158}
   m_Layer: 0
   m_Name: Aura
   m_TagString: Untagged
@@ -1434,6 +1480,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1225885158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225885154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fab66b00782b584989bcafc383cc006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skillType: 4
+  _icon: {fileID: 1456949172}
 --- !u!1 &1390455308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +1632,7 @@ GameObject:
   - component: {fileID: 1456949171}
   - component: {fileID: 1456949173}
   - component: {fileID: 1456949172}
+  - component: {fileID: 1456949174}
   m_Layer: 0
   m_Name: Icon
   m_TagString: Untagged
@@ -1637,6 +1698,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456949170}
   m_CullTransparentMesh: 1
+--- !u!114 &1456949174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456949170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 0, y: 0}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1463458524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,7 +1762,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463458524}
   m_Enabled: 1
-  m_Alpha: 0.75
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -2290,6 +2366,7 @@ GameObject:
   - component: {fileID: 1914943860}
   - component: {fileID: 1914943862}
   - component: {fileID: 1914943861}
+  - component: {fileID: 1914943863}
   m_Layer: 0
   m_Name: Icon
   m_TagString: Untagged
@@ -2355,6 +2432,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914943859}
   m_CullTransparentMesh: 1
+--- !u!114 &1914943863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914943859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 0, y: 0}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2038241450
 GameObject:
   m_ObjectHideFlags: 0
@@ -2366,6 +2458,7 @@ GameObject:
   - component: {fileID: 2038241451}
   - component: {fileID: 2038241453}
   - component: {fileID: 2038241452}
+  - component: {fileID: 2038241454}
   m_Layer: 0
   m_Name: Icon
   m_TagString: Untagged
@@ -2431,6 +2524,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038241450}
   m_CullTransparentMesh: 1
+--- !u!114 &2038241454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038241450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 0, y: 0}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &8129444796008065496
 PrefabInstance:
   m_ObjectHideFlags: 0
