@@ -2,33 +2,42 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum SkillState {opened, locked, obtained}
-
 public class SkillTreeItem : MonoBehaviour
 {
-    [SerializeField] private bool _isBase; 
+    [SerializeField] private SkillType _skillType;
+    [SerializeField] private int _skillLvl;
     [SerializeField] private int _price;
-
     [SerializeField] private SkillTreeItem[] _leadingSkills;
     [SerializeField] private SkillTreeItem[] _followingSkills;
+   
+    [SerializeField] private Button _skillBtn;
 
-    [SerializeField] private SkillState _state = SkillState.locked;
+    private SkillState _state = SkillState.locked;
+    private SkillWindow _window;
 
-    [SerializeField][TextArea] private string _description;
-    [SerializeField] private SkillWindow _window;
+    public Action<SkillState> OnStateChange;
 
-    private Button _skillBtn;
+    public SkillType SkillType => _skillType;
+    public int SkillLvl => _skillLvl;
+    public int Price => _price;
+    public SkillTreeItem[] FollowingSkills => _followingSkills;
+    public SkillTreeItem[] LeadingSkills => _leadingSkills;
 
-    public bool IsBase { get { return _isBase; } }
-    public string Description { get { return _description; }  }
-    public int Price { get { return _price; } }
-    public SkillTreeItem[] FollowingSkills { get { return _followingSkills; }  }
-    public SkillTreeItem[] LeadingSkills { get { return _leadingSkills; } }
-    public SkillState State { 
-        get
+    public bool IsBase { get; set; }
+    public SkillWindow SkillWindow 
+    {
+        get => _window;
+
+        set 
         {
-            return _state; 
+            _window = value;
+            _skillBtn.onClick.AddListener(() => _window.OnCurrSkillChange?.Invoke(this));
         }
+    }
+
+    public SkillState State { 
+        get => _state;
+        
         set 
         {
             _state = value;
@@ -36,24 +45,10 @@ public class SkillTreeItem : MonoBehaviour
 
             if (value != SkillState.locked)
                 _skillBtn.interactable = true;
-
         }
     }
 
-    public Action<SkillState> OnStateChange;
-
-    private void Start()
-    {
-        _skillBtn = GetComponent<Button>();
-        _skillBtn.interactable = false;
-        _skillBtn.onClick.AddListener( ()=> _window.SetCurrSkill(this));
-        State = _state;
-    }
-
-    public void Forget() 
-    {
-        State = SkillState.opened;
-    }
+    public void Forget() => State = SkillState.opened;
 
     public void Learn()
     {
@@ -61,7 +56,5 @@ public class SkillTreeItem : MonoBehaviour
 
         foreach (SkillTreeItem skill in _followingSkills) 
             skill.State = SkillState.opened;
-
     }
-
-}
+} 

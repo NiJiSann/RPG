@@ -24,7 +24,7 @@ public class Aura : Skill
 
         _aura.transform.localScale = _initSize;
 
-        var currLvl = _upgrades[SkilData.GetSkillLvl(SkillType.shield)];
+        var currLvl = _upgrades[SkilData.GetSkillLvl(SkillType.Aura)];
         _aura.transform.localScale *= currLvl.size;
         _animator.SetTrigger("Aura");
         yield return new WaitForSeconds(1.25f);

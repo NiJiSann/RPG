@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,10 +6,30 @@ public class SkillTree : MonoBehaviour
     [SerializeField] private SkillTreeItem _baseSkill;
     [SerializeField] private Button _forgetAll;
     [SerializeField] private SkillPointManager _skillPointManager;
+    [SerializeField] private SkillWindow _skillWindow;
 
-    private void Start()
+    private void Awake()
     {
+        _baseSkill.IsBase = true;
+        _baseSkill.State = SkillState.obtained;
+        OpenStartUpSkills();
+        SetSkillWindow(_baseSkill);
         _forgetAll.onClick.AddListener(()=>  ForgetFollowingSkills(_baseSkill));
+    }
+
+    private void OpenStartUpSkills() 
+    {
+        foreach (var skill in _baseSkill.FollowingSkills)
+            skill.State = SkillState.opened;
+    }
+
+    private void SetSkillWindow(SkillTreeItem skill)
+    {
+        foreach (var skill_inst in skill.FollowingSkills)
+        {
+            skill_inst.SkillWindow = _skillWindow;
+            SetSkillWindow(skill_inst);
+        }
     }
 
     private void ForgetFollowingSkills(SkillTreeItem skill) 
@@ -21,6 +39,7 @@ public class SkillTree : MonoBehaviour
             if (skill_inst.State == SkillState.obtained)
             {
                 skill_inst.Forget();
+                _skillPointManager.AddPoints(skill_inst.Price);
                 ForgetFollowingSkills(skill_inst);
             }
         }

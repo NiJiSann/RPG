@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public abstract class Skill : MonoBehaviour 
@@ -11,7 +8,6 @@ public abstract class Skill : MonoBehaviour
 
     public Action OnStartSkillAnim;
     public Action OnEndSkillAnim;
-
 
     private void OnEnable()
     {

@@ -14,13 +14,9 @@ public class SkillPointManager: MonoBehaviour
     {
         _addPoint.onClick.AddListener(() => AddPoints(1));
         OnValueChange?.Invoke();
-
     }
 
-    public int GetPonts() 
-    {
-        return PlayerPrefs.GetInt(KEY, 0);
-    }
+    public int GetPonts() => PlayerPrefs.GetInt(KEY, 0);
 
     public void AddPoints(int val) 
     {
@@ -28,6 +24,5 @@ public class SkillPointManager: MonoBehaviour
         PlayerPrefs.SetInt(KEY, t+val);
 
         OnValueChange?.Invoke();
-        
     }
 }

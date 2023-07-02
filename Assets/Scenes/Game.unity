@@ -1813,6 +1813,7 @@ GameObject:
   - component: {fileID: 1681944572}
   - component: {fileID: 1681944571}
   - component: {fileID: 1681944570}
+  - component: {fileID: 1681944573}
   m_Layer: 0
   m_Name: SkillBook
   m_TagString: Untagged
@@ -1922,6 +1923,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681944568}
   m_CullTransparentMesh: 1
+--- !u!114 &1681944573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681944568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16fcf291ba7416d43858a018facee025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loadSceneMode: 1
+  _sceneName: SkillTree
+  _isUnload: 0
 --- !u!1 &1683784189
 GameObject:
   m_ObjectHideFlags: 0

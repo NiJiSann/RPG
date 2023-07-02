@@ -49,6 +49,5 @@ public class PointerDownUpHandler : MonoBehaviour, IPointerDownHandler, IPointer
         StopAllCoroutines();
         OnUp?.Invoke();
     }
-
     public void OnPointerEnter(PointerEventData eventData) { }
 }

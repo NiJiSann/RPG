@@ -1,7 +1,4 @@
-using System.Diagnostics;
 using UnityEngine;
-
-public enum SkillInputType {Base, First, Second, Third  }
 
 public class SkillProvider : MonoBehaviour
 {
