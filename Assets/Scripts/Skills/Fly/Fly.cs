@@ -12,12 +12,12 @@ public class Fly : Skill
     public override void Use()
     {
         base.Use();
-        StartCoroutine(FlyCo());
+        StartCoroutine(UseCo());
     }
 
-    private IEnumerator FlyCo() 
+    private IEnumerator UseCo() 
     {
-        var currLvl = _upgrades[SkillData.GetSkillLvl(SkillType.Fly)];
+        var currLvl = _upgrades[SkillData.GetSkill(SkillType.Fly)];
 
         _animator.SetBool("isFlying", true);
         var initDrag = _rigidbody.drag;

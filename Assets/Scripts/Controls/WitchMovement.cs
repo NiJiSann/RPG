@@ -17,7 +17,7 @@ public class WitchMovement : MonoBehaviour
         _camera = Camera.main;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         _animator.SetFloat("speed", _joystick.Direction.magnitude);
 
@@ -27,7 +27,7 @@ public class WitchMovement : MonoBehaviour
             _movementDir.y = 0;
             _movementDir.Normalize();
             transform.forward = _movementDir;
-            _rb.velocity = Time.deltaTime * _constantSpeed * _movementSpeed * new Vector3(_joystick.Direction.x,0,_joystick.Direction.y);
+            _rb.velocity = Time.fixedDeltaTime * _constantSpeed * _movementSpeed * new Vector3(_joystick.Direction.x,0,_joystick.Direction.y);
         }
 
         if (_joystick.Direction.magnitude<0.01f) 

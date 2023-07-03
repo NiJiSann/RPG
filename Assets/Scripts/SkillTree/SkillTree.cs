@@ -39,6 +39,8 @@ public class SkillTree : MonoBehaviour
         {
             if (skill_inst.State == SkillState.obtained)
             {
+                SkillData.SetSkill(skill_inst.SkillType, skill_inst.SkillLvl,0);
+
                 skill_inst.Forget();
                 _skillPointManager.AddPoints(skill_inst.Price);
                 ForgetFollowingSkills(skill_inst);

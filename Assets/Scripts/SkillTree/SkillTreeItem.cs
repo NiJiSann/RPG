@@ -69,7 +69,7 @@ public class SkillTreeItem : MonoBehaviour
 
     private void RestoreSkillProgress()
     {
-        if (SkillData.GetSkillLvl(SkillType) >= SkillLvl)
+        if (SkillData.GetSkillState(SkillType, SkillLvl) == 1)
             Learn();
     }
 

@@ -12,10 +12,10 @@ public class Spell : Skill
     private float _coolDown = 1.5f;
     public override void Use()
     {
-        StartCoroutine(AuraCo());
+        StartCoroutine(UseCo());
     }
 
-    private IEnumerator AuraCo()
+    private IEnumerator UseCo()
     {
         OnStartSkillAnim?.Invoke();
 
@@ -25,7 +25,7 @@ public class Spell : Skill
         _spell.transform.localScale = _initSize;
 
         var instance = Instantiate(_spell, _parent);
-        var currLvl = _upgrades[SkillData.GetSkillLvl(SkillType.Spell)];
+        var currLvl = _upgrades[SkillData.GetSkill(SkillType.Spell)-1];
         var animDuration = .9f; 
         instance.transform.localScale *= currLvl.size;
 
@@ -43,5 +43,14 @@ public class Spell : Skill
 
         yield return new WaitForSeconds(_coolDown);
         OnEndSkillAnim?.Invoke();
+        StartCoroutine( DestroySpell(instance.gameObject));
     }
+
+    private IEnumerator DestroySpell(GameObject spell)
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(spell);
+
+    }
+
 }

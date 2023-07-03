@@ -1,4 +1,3 @@
-using UnityEditor.iOS.Xcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -29,7 +28,8 @@ public class SkillButtonView : MonoBehaviour
 
     void UpdateView(Scene arg = default)
     {
-        if (SkillData.GetSkillLvl(_skillType) == 0) return;
+
+        if (SkillData.GetSkill(_skillType) == 0) return;
 
         _icon.gameObject.SetActive(true);
         _btn.interactable = true;

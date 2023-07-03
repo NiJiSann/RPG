@@ -12,10 +12,10 @@ public class Shield : Skill
     public override void Use()
     {
         base.Use();
-        StartCoroutine(ShieldCo());
+        StartCoroutine(UseCo());
     }
 
-    private IEnumerator ShieldCo() 
+    private IEnumerator UseCo() 
     {
         OnStartSkillAnim?.Invoke();
         if (_shield == null)
@@ -23,7 +23,7 @@ public class Shield : Skill
 
         _shield.transform.localScale = _initSize;
 
-        var currLvl =  _upgrades[SkillData.GetSkillLvl(SkillType.Shield)];
+        var currLvl =  _upgrades[SkillData.GetSkill(SkillType.Shield) - 1];
         _shield.transform.localScale *= currLvl.size;
         _animator.SetTrigger("Shield");
         yield return new WaitForSeconds(1.5f);

@@ -13,10 +13,10 @@ public class Aura : Skill
     public override void Use()
     {
         base.Use();
-        StartCoroutine(AuraCo());
+        StartCoroutine(UseCo());
     }
 
-    private IEnumerator AuraCo()
+    private IEnumerator UseCo()
     {
         OnStartSkillAnim?.Invoke();
         if (_aura == null)
@@ -24,7 +24,7 @@ public class Aura : Skill
 
         _aura.transform.localScale = _initSize;
 
-        var currLvl = _upgrades[SkillData.GetSkillLvl(SkillType.Aura)];
+        var currLvl = _upgrades[SkillData.GetSkill(SkillType.Aura) - 1];
         _aura.transform.localScale *= currLvl.size;
         _animator.SetTrigger("Aura");
         yield return new WaitForSeconds(1.25f);

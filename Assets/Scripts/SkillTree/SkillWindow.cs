@@ -62,7 +62,7 @@ public class SkillWindow : MonoBehaviour
 
     private void ForgetCurrSkill()
     {
-        SkillData.SetSkillLvl(_currSkill.SkillType, _currSkill.SkillLvl-1);
+        SkillData.SetSkill(_currSkill.SkillType, _currSkill.SkillLvl-1);
         _currSkill.Forget();
         _skillPointManager.AddPoints(_currSkill.Price);
         UpdateInfo();
@@ -70,7 +70,7 @@ public class SkillWindow : MonoBehaviour
 
     private void LearnCurrSkill()
     {
-        SkillData.SetSkillLvl(_currSkill.SkillType, _currSkill.SkillLvl);
+        SkillData.SetSkill(_currSkill.SkillType, _currSkill.SkillLvl);
         _currSkill.Learn();
         _skillPointManager.AddPoints(-_currSkill.Price);
         UpdateInfo();
